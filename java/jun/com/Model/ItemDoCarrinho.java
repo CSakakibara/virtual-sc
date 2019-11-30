@@ -7,6 +7,7 @@ public class ItemDoCarrinho {
     private int quantidadeSelecionada;
     private double precoProduto;
     private double precoTotal;
+    private boolean selected;
 
     public long getId() {
         return id;
@@ -46,5 +47,13 @@ public class ItemDoCarrinho {
 
     public void setPrecoTotal(double precoTotal) {
         this.precoTotal = precoTotal;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
