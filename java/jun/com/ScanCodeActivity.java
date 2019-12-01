@@ -51,6 +51,28 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     Toast.makeText(this, "Produto Adicionado", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                     break;
+                case "7896181919247":
+                    itemDoCarrinho.setNome("Remedio");
+                    itemDoCarrinho.setQuantidadeSelecionada(1);
+                    itemDoCarrinho.setPrecoProduto(1.00);
+                    itemDoCarrinho.setPrecoTotal(1.00);
+                    itemDoCarrinho.setSelected(false);
+                    MainActivity.adpItemDoCarrinho.addItemCarrinho(itemDoCarrinho);
+                    MainActivity.totalCarrinho_tv.setText(Double.toString((1.00 + Double.parseDouble(MainActivity.totalCarrinho_tv.getText().toString()))));
+                    Toast.makeText(this, "Produto Adicionado", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    break;
+                case "7791293034973":
+                    itemDoCarrinho.setNome("Desodorante");
+                    itemDoCarrinho.setQuantidadeSelecionada(1);
+                    itemDoCarrinho.setPrecoProduto(10.00);
+                    itemDoCarrinho.setPrecoTotal(10.00);
+                    itemDoCarrinho.setSelected(false);
+                    MainActivity.adpItemDoCarrinho.addItemCarrinho(itemDoCarrinho);
+                    MainActivity.totalCarrinho_tv.setText(Double.toString((10.00 + Double.parseDouble(MainActivity.totalCarrinho_tv.getText().toString()))));
+                    Toast.makeText(this, "Produto Adicionado", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    break;
                 case "7898932631057":
                     itemDoCarrinho.setNome("Garrafinha de Agua");
                     itemDoCarrinho.setQuantidadeSelecionada(1);
@@ -58,9 +80,20 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     itemDoCarrinho.setPrecoTotal(3.00);
                     itemDoCarrinho.setSelected(false);
                     MainActivity.adpItemDoCarrinho.addItemCarrinho(itemDoCarrinho);
+                    MainActivity.totalCarrinho_tv.setText(Double.toString((3.00 + Double.parseDouble(MainActivity.totalCarrinho_tv.getText().toString()))));
                     Toast.makeText(this, "Produto Adicionado", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                     break;
+                case "7891021001946":
+                    itemDoCarrinho.setNome("Filtro de Papel Melitta 30 Unidades");
+                    itemDoCarrinho.setQuantidadeSelecionada(1);
+                    itemDoCarrinho.setPrecoProduto(4.00);
+                    itemDoCarrinho.setPrecoTotal(4.00);
+                    itemDoCarrinho.setSelected(false);
+                    MainActivity.adpItemDoCarrinho.addItemCarrinho(itemDoCarrinho);
+                    MainActivity.totalCarrinho_tv.setText(Double.toString((4.00 + Double.parseDouble(MainActivity.totalCarrinho_tv.getText().toString()))));
+                    Toast.makeText(this, "Produto Adicionado", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 default:
                     Toast.makeText(this, "Produto nao Cadastrado", Toast.LENGTH_SHORT).show();
                     onBackPressed();
@@ -72,9 +105,20 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     Toast.makeText(this, "Preco: R$ 15.00 ", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                     break;
+                case "7896181919247":
+                    Toast.makeText(this, "Preco: R$ 1.00 ", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    break;
+                case "7791293034973":
+                    Toast.makeText(this, "Preco: R$ 10.00 ", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    break;
                 case "7898932631057":
-
                     Toast.makeText(this, "Preco: R$ 3.00 ", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                    break;
+                case "7891021001946":
+                    Toast.makeText(this, "Preco: R$ 4.00 ", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                     break;
                 default:

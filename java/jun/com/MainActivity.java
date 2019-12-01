@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Button cst_btn;
     Button edt_btn;
     Button rmv_btn;
+    Button email_btn;
 
 
     @Override
@@ -129,6 +130,21 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 janelaDeQuantidade.create().show();
+            }
+        });
+
+        email_btn = (Button) findViewById(R.id.btn_eml);
+        email_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder janelaDeQuantidade = new AlertDialog.Builder(MainActivity.this);
+                janelaDeQuantidade.setTitle("Informe");
+                janelaDeQuantidade.setMessage("Insira a Quantidade:");
+                final EditText input = new EditText(MainActivity.this);
+                input.setInputType(InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS);
+                janelaDeQuantidade.setView(input);
+                janelaDeQuantidade.setNegativeButton("Cancelar", null);
+                janelaDeQuantidade.setPositiveButton("Confirmar",null);
             }
         });
     }
