@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 
@@ -17,11 +18,15 @@ import jun.com.R;
 public class AdapterItensCarrinho extends BaseAdapter {
 
     private Context context;
-    public List<ItemDoCarrinho> itemList;
+    private List<ItemDoCarrinho> itemList;
 
     public AdapterItensCarrinho(Context context, List<ItemDoCarrinho> itemList) {
         this.context = context;
         this.itemList = itemList;
+    }
+
+    public List<ItemDoCarrinho> getItemList() {
+        return itemList;
     }
 
     @Override
@@ -46,7 +51,7 @@ public class AdapterItensCarrinho extends BaseAdapter {
     }
 
     @Override
-    public View getView(int posicao, View view, ViewGroup viewGroup) {
+    public View getView(final int posicao, View view, ViewGroup viewGroup) {
 
         View v = View.inflate(this.context, R.layout.layout_cart, null);
 
@@ -61,6 +66,13 @@ public class AdapterItensCarrinho extends BaseAdapter {
         tvQuantidadeSelecionada.setText(String.valueOf(this.itemList.get(posicao).getQuantidadeSelecionada()));
         tvValorTotalItens.setText(String.valueOf(this.itemList.get(posicao).getPrecoTotal()));
         cbSelect.setChecked(this.itemList.get(posicao).isSelected());
+
+        cbSelect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                itemList.get(posicao).setSelected(!itemList.get(posicao).isSelected());
+            }
+        });
 
         return v;
     }

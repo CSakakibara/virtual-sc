@@ -1,5 +1,6 @@
 package jun.com;
 
+import androidx.annotation.MainThread;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -37,6 +38,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         if(MainActivity.op == 1) {
             MainActivity.op = 0;
             ItemDoCarrinho itemDoCarrinho = new ItemDoCarrinho();
+
             switch (result.getText()) {
                 case "7891150061408":
                     itemDoCarrinho.setNome("Conjunto Shampoo 400mL + Condicionador 200mL TRESemme");
@@ -45,6 +47,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     itemDoCarrinho.setPrecoTotal(15.00);
                     itemDoCarrinho.setSelected(false);
                     MainActivity.adpItemDoCarrinho.addItemCarrinho(itemDoCarrinho);
+                    MainActivity.totalCarrinho_tv.setText(Double.toString((15.00 + Double.parseDouble(MainActivity.totalCarrinho_tv.getText().toString()))));
                     Toast.makeText(this, "Produto Adicionado", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                     break;
