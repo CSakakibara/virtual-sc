@@ -137,14 +137,15 @@ public class MainActivity extends AppCompatActivity {
         email_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder janelaDeQuantidade = new AlertDialog.Builder(MainActivity.this);
-                janelaDeQuantidade.setTitle("Informe");
-                janelaDeQuantidade.setMessage("Insira a Quantidade:");
+                AlertDialog.Builder janelaEmail = new AlertDialog.Builder(MainActivity.this);
+                janelaEmail.setTitle("Para receber nossas promoções");
+                janelaEmail.setMessage("Digite seu email:");
                 final EditText input = new EditText(MainActivity.this);
                 input.setInputType(InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS);
-                janelaDeQuantidade.setView(input);
-                janelaDeQuantidade.setNegativeButton("Cancelar", null);
-                janelaDeQuantidade.setPositiveButton("Confirmar",null);
+                janelaEmail.setView(input);
+                janelaEmail.setNegativeButton("Cancelar", null);
+                janelaEmail.setPositiveButton("Confirmar",null);
+                janelaEmail.create().show();
             }
         });
     }
